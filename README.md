@@ -1,82 +1,76 @@
-# Laura-Willis
+# Project Title: title here (10 words maximum)
 
-# FP4-proposal
+### Statement
+Describe your project. Why is it interesting? Why is it interesting to you personally? What do you hope to learn? 
 
-The project proposal includes these components:
+### Analysis
+Explain what approaches from class you will bring to bear on the project. Be explicit: e.g., will you use recursion? How? Will you use map/filter/reduce? How? Will you use data abstraction? Will you use object-orientation? Will you use functional approaches to processing your data? Will you use state-modification approaches? A combination?
 
-1. A repository for the team project
-2. A `README.md` file in this repository, which is the project plan
-3. A 3-slide slide deck to be presented in class
+The idea here is to identify what ideas from the class you will use in carrying out your project. 
 
-## Due Dates
-* Wed 2016-04-06 at 12 noon (before class) (Martin section)
-* Thu 2016-04-07 at 3:30p (before class) (Sherman section)
+### Data set or other source materials
+If you will be working with existing data, where will you get those data from? (Dowload it from a website? access it in a database? create it in a simulation you will build....)
 
-Ask questions, as always, [on our discussion forum!][forum]
+How will you convert that data into a form usable for your project?  
 
-## Instructions
+Do your homework here: if you are pulling data from somewhere, actually go download it and look at it. Explain in some detail what your plan is for accomplishing the necessary processing.
 
-Teams will submit a single proposal, with sections that each member has done individually detailing their proposed contributions. The submission will be the `README.md` file in your brand-new project repository, which you'll make. 
+If you are using some other starting materails, explain what they are. Basically: anything you plan to use that isn't code.
 
-You must start using GitHub collaboratively from this point forward. 
+### Deliverable and Demonstration
+Explain exactly what you'll have at the end. What will it be able to do at the live demo?
 
-Instructions: 
+What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
 
-1. Create a new repo as part of the `oplS16projects` organization
-  * Give it a name that you like—may be your real names, usernames, or project name
-  * Add your teammates as collaborators (Settings > Collaborators & Teams > Add Collaborator)
-2. Copy the content from the [template file](template.md) into your `README.md`
-  * Click the “Raw” button on the `template.md` file and then copy-paste into your repo's `README.md` edit view
-  * Save it
-  * Then start editing it to be the real thing
-3. Everyone on the team contributes their sections to your `README.md` file.
-  * Use GitHub's collaboration features to make sure that each team member contributes meaningful content to the file
-  * At the absolute minimum, respective team members must have commits that show they have authored the section describing their planned contributions
-4. Create a [github Release](https://help.github.com/articles/creating-releases/
-) of your repository. 
- * Version: v0.0
- * Title: Proposal
- * Description: tag `@fgmart` or `@marksherman` depending on your section
+Will it run on some data, like batch mode? Will you present some analytical results of the processing? How can it be re-run on different source data?
 
-And now some detail on what to write _in_ the report.
+Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
 
-**Overall guidance:** *You should be proposing something that you have high confidence that you can achieve, and the proposal should project that confidence.*
+### Evaluation of Results
+How will you know if you are successful? 
+If you include some kind of _quantitative analysis,_ that would be good.
 
-The proposal should be no longer than necessary, but long enough to include critical detail. Diagrams are welcome. 
+## Architecture Diagram
+Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
 
-Remember, you can do some neat [formatting things with Markdown.][markdown]
+Create several paragraphs of narrative to explain the pieces and how they interoperate.
 
-In case you missed it, here again is the [template file](template.md)
+## Schedule
+Explain how you will go from proposal to finished product. 
 
-## In-Class Presentation 
-Teams will each deliver an in-class presentation. Your team will have two minutes to present.
+There are three deliverable milestones to explicitly define, below.
 
-The presentation shall have exactly three slides:
+The nature of deliverables depend on your project, but may include things like processed data ready for import, core algorithms implemented, interface design prototyped, etc. 
 
-1. Title
-  * project title (10 words or fewer)
-  * your real names
-  * each real name followed by GitHub username
-  * a relevant image of some sort (optional)
-2. Overview
-  * a few short phrases describing the project
-  * a different relevant image (optional)
-3. Architecture Diagram 
-  * visual diagram showing the major components of the project
-  * include external things that your project will connect to
-  * include arrows showing flow of information
-  * internal components annotated with Racket libraries that they will use
-  * _important:_ annotate each block with the GH username of the person who is primarily responsible for its creation
+You will be expected to turn in code, documentation, and data (as appropriate) at each of these stages.
 
-Make the slides in [Google Slides][gslides].
+Write concrete steps for your schedule to move from concept to working system. 
 
-Then, import your deck into the correct whole-class slide deck:
-* [Martin section][martinslides]
-* [Sherman section][shermanslides]
+### First Milestone (Fri Apr 15)
+What exactly will be turned in on this day? 
 
-You and your teammates will give the presentation in class the day that this assignment is due.
+### Second Milestone (Fri Apr 22)
+What exactly will be turned in on this day? 
 
-## Grading
-The proposal must be submitted on time to receive credit. Late submissions will not be accepted for credit.
+### Final Presentation (last week of semester)
+What additionally will be done in the last chunk of time?
 
-You personally must be present in class (and participate in the presentation when it is your turn) to receive credit for the presentation. If your teammates are there and you are not, they will receive presentation credit and you will not.
+## Group Responsibilities
+Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
+
+**Additional instructions for teams of three:** 
+* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
+* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
+* The team lead has full partner implementation responsibilities also.
+* Identify who is team lead.
+
+In the headings below, replace the silly names and GitHub handles with your actual ones.
+
+### Susan Scheme @susanscheme
+will write the....
+
+### Leonard Lambda @lennylambda
+will work on...
+
+### Frank Functions @frankiefunk 
+Frank is team lead. Additionally, Frank will work on...   
