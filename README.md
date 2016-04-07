@@ -1,4 +1,4 @@
-# Project Title:  Hang-Me-With-Sounds(10 words maximum)
+# Project Title:  Hang me, with sounds!
 
 ### Statement
 
@@ -6,15 +6,15 @@
 
 ### Analysis
   What is this game special than the others? First that would be that this game provides difficulties levels and sound.
-  The basic mechanism of the game for this project is that the computer will randomly select a word from a dictionary file ("dictionary.txt"). The list of words is provided by this file which are used by the computer to randomly pick. The user is able to chose the level difficulty to play. These levels are: easy, normal and hard. Basically a constructor for game that takes one argument: difficulty by using symbols. 
+  The basic mechanism of the game for this project is that the computer will randomly select a word from a text file ("dictionary.txt"). The list of words is provided by this file which are used by the computer to randomly pick. The user is able to chose the level difficulty to play. These levels are: easy, normal and hard.
   The user will then try to guess what the word is. As the user makes correct, or incorrect guesses, the hangman or word will be updated. This will be handled by the constructor "new-game" from game object.
   The hangman's body parts are drawn by a function draw-body-part which draws the pieces of a hangman figure using canvas. The figure is drawn one body part at a time. The function consumes one of the seven symbols 'deck, 'head, 'body, 'right-leg, 'letf-leg, 'right-arm, 'left-arm. This six pieces of the hangman are: head, body, left arm, right arm, left leg, right leg. It always returns true and draws the matching part of the figure.
   The "guess" function will then check the guess, update the game state accordingly, and request the canvas redraw with the new state.
   If the player makes 6 wrong guesses, the entire figure has been drawn and game is over.
-  Are four sounds provided by audio stream to send wave files. These sounds will be played for correct guess, wrong guess, winning, losing.
+  There will be four sounds played using rsound audio streams. These .wav files will be played for correct guesses, wrong guesses, winning, and losing.
   
 ### Data set or other source materials
-  External libraries that we are going to use are: htdp/draw, lang/plt-pretty-big-text, racket/text-field box, racket/gui/bas, rsound.
+  External libraries that we are going to use are: htdp/draw, lang/plt-pretty-big-text, racket/text-field box, racket/gui/bas, and rsound. Additionally an external .txt file containing words from the english languague will be utilized.
 
 ### Deliverable and Demonstration
 
