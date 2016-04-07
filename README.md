@@ -18,40 +18,29 @@
 
 ### Deliverable and Demonstration
 
-  At the end at live demo we'll present a popular interactive game, with difficulties levels, and sound. 
-
-### Evaluation of Results
-????
+  At the conclusion of the course we will have a fully functional game that can be played and enjoyed by all! We hope to have all features implemented by the time of the live demonstration. 
 
 ## Architecture Diagram
-?????
+![alt tag](https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/flowchart.png)
 
 ## Schedule
-Explain how you will go from proposal to finished product. 
-
-There are three deliverable milestones to explicitly define, below.
-
-The nature of deliverables depend on your project, but may include things like processed data ready for import, core algorithms implemented, interface design prototyped, etc. 
-
-You will be expected to turn in code, documentation, and data (as appropriate) at each of these stages.
-
-Write concrete steps for your schedule to move from concept to working system. 
 
 ### First Milestone (Fri Apr 15)
-On this day will be turned on the basic framework of the game.
+The first milestone will include the basic implementation of the game. It is key to have a fully functional base platform to build the extra functionality onto.
 
 ### Second Milestone (Fri Apr 22)
-On this day will be turned on the hard difficulties levels, gui, touch ups.
+The second milestone will be the implementation of sound, non-traditional difficulties, and the GUI. These are the features that really differentiate our hangman from other implementations.
 
 ### Final Presentation (last week of semester)
-Final will be 
+The final presentation, being the make or break deadline for causing a positive impression, will be the time by which we plan to have all of the bugs and touch-ups tackled. 
 
 ## Group Responsibilities
 
-Willis is the leader of Happy Feet team. He is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
+Willis is the leader of Team Happy Feet.
 
-### Willis Hand Scheme @
+### Willis Hand (whand662)
+In addition to handling code integration, I will be responsible for the back-end code that makes up the game itself. Although hangman implementations already exist, by making the game from the ground up I will be able to implement our special features more easily.
 
 
-### Laura Lucaciu Lambda @
+### Laura Lucaciu (lauralucaciu)
   Will work on graphics part, drawing the hangman, gui part.
