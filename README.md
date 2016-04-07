@@ -1,39 +1,30 @@
-# Project Title: title here (10 words maximum)
+# Project Title:  Hang-Me-With-Sounds(10 words maximum)
 
 ### Statement
-Describe your project. Why is it interesting? Why is it interesting to you personally? What do you hope to learn? 
+
+  Hangman is a popular word game in which one player (the "chooser") chooses a secret word and another player (the "guesser") attempts to guess the word one letter at a time. If a guessed letter appears in the word, all instances of it are revealed. If not, the guesser loses a chance. If the guesser figures out the secret word before he or she runs out of chances, he or she wins. If not, the player who chose the word wins. 
 
 ### Analysis
-Explain what approaches from class you will bring to bear on the project. Be explicit: e.g., will you use recursion? How? Will you use map/filter/reduce? How? Will you use data abstraction? Will you use object-orientation? Will you use functional approaches to processing your data? Will you use state-modification approaches? A combination?
-
-The idea here is to identify what ideas from the class you will use in carrying out your project. 
-
+  What is this game special than the others? First that would be that this game provides difficulties levels and sound.
+  The basic mechanism of the game for this project is that the computer will randomly select a word from a dictionary file ("dictionary.txt"). The list of words is provided by this file which are used by the computer to randomly pick. The user is able to chose the level difficulty to play. These levels are: easy, normal and hard. Basically a constructor for game that takes one argument: difficulty by using symbols. 
+  The user will then try to guess what the word is. As the user makes correct, or incorrect guesses, the hangman or word will be updated. This will be handled by the constructor "new-game" from game object.
+  The hangman's body parts are drawn by a function draw-body-part which draws the pieces of a hangman figure using canvas. The figure is drawn one body part at a time. The function consumes one of the seven symbols 'deck, 'head, 'body, 'right-leg, 'letf-leg, 'right-arm, 'left-arm. This six pieces of the hangman are: head, body, left arm, right arm, left leg, right leg. It always returns true and draws the matching part of the figure.
+  The "guess" function will then check the guess, update the game state accordingly, and request the canvas redraw with the new state.
+  If the player makes 6 wrong guesses, the entire figure has been drawn and game is over.
+  Are four sounds provided by audio stream to send wave files. These sounds will be played for correct guess, wrong guess, winning, losing.
+  
 ### Data set or other source materials
-If you will be working with existing data, where will you get those data from? (Dowload it from a website? access it in a database? create it in a simulation you will build....)
-
-How will you convert that data into a form usable for your project?  
-
-Do your homework here: if you are pulling data from somewhere, actually go download it and look at it. Explain in some detail what your plan is for accomplishing the necessary processing.
-
-If you are using some other starting materails, explain what they are. Basically: anything you plan to use that isn't code.
+  External libraries that we are going to use are: htdp/draw, lang/plt-pretty-big-text, racket/text-field box, racket/gui/bas, rsound.
 
 ### Deliverable and Demonstration
-Explain exactly what you'll have at the end. What will it be able to do at the live demo?
 
-What exactly will you produce at the end of the project? A piece of software, yes, but what will it do? Here are some questions to think about (and answer depending on your application).
-
-Will it run on some data, like batch mode? Will you present some analytical results of the processing? How can it be re-run on different source data?
-
-Will it be interactive? Can you show it working? This project involves a live demo, so interactivity is good.
+  At the end at live demo we'll present a popular interactive game, with difficulties levels, and sound. 
 
 ### Evaluation of Results
-How will you know if you are successful? 
-If you include some kind of _quantitative analysis,_ that would be good.
+????
 
 ## Architecture Diagram
-Upload the architecture diagram you made for your slide presentation to your repository, and include it in-line here.
-
-Create several paragraphs of narrative to explain the pieces and how they interoperate.
+?????
 
 ## Schedule
 Explain how you will go from proposal to finished product. 
@@ -47,30 +38,20 @@ You will be expected to turn in code, documentation, and data (as appropriate) a
 Write concrete steps for your schedule to move from concept to working system. 
 
 ### First Milestone (Fri Apr 15)
-What exactly will be turned in on this day? 
+On this day will be turned on the basic framework of the game.
 
 ### Second Milestone (Fri Apr 22)
-What exactly will be turned in on this day? 
+On this day will be turned on the hard difficulties levels, gui, touch ups.
 
 ### Final Presentation (last week of semester)
-What additionally will be done in the last chunk of time?
+Final will be 
 
 ## Group Responsibilities
-Here each group member gets a section where they, as an individual, detail what they are responsible for in this project. Each group member writes their own Responsibility section. Include the milestones and final deliverable.
 
-**Additional instructions for teams of three:** 
-* Remember that you must have prior written permission to work in groups of three (specifically, an approved `FP3` team declaration submission).
-* The team must nominate a lead. This person is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
-* The team lead has full partner implementation responsibilities also.
-* Identify who is team lead.
+Willis is the leader of Happy Feet team. He is primarily responsible for code integration. This work may be shared, but the team lead has default responsibility.
 
-In the headings below, replace the silly names and GitHub handles with your actual ones.
+### Willis Hand Scheme @
 
-### Susan Scheme @susanscheme
-will write the....
 
-### Leonard Lambda @lennylambda
-will work on...
-
-### Frank Functions @frankiefunk 
-Frank is team lead. Additionally, Frank will work on...   
+### Laura Lucaciu Lambda @
+  Will work on graphics part, drawing the hangman, gui part.
