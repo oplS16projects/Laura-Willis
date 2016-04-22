@@ -21,13 +21,13 @@
       #f
       #t))
 ;;(define dictionary (filter lengthcheck (map symbol->string (file->list (string->path "dictionary.txt")))))
-(define dictionary (file->list (string->path "dictionary.txt")))
+(define dictionary (filter lengthcheck (map symbol->string (file->list (string->path "dictionary.txt")))))
 
 ;; Basically a constructor for game, takes one arg: difficulty
 (define (new-game difficulty)
   (cond ((eq? difficulty 'easy) (make-game 'easy))
         ((eq? difficulty 'hard) (make-game 'hard))
-        ('else (make-game 'normal (symbol->string (car (list-tail dictionary (random (length dictionary)))))))))
+        ('else (make-game 'normal (car (list-tail dictionary (random (length dictionary))))))))
 
 
 ;; Game object, use constructor new-game
@@ -82,7 +82,7 @@
 (define (event-handler t e) (define boxinput (send t get-value))
   (if (eqv? (send e get-event-type) 'text-field-enter)
       (begin (send t set-value "") (cond ((string-ci=? boxinput "easy") (println "starteasygame"))
-                                         ((string-ci=? boxinput "normal") (println "startnormalgame"))
+                                         ((string-ci=? boxinput "normal") (set! game (new-game 'normal)))
                                          ((string-ci=? boxinput "hard") (println "starthardgame"))
                                          ((= 1 (string-length boxinput)) (guess boxinput))))
       #f))
