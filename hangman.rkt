@@ -69,6 +69,7 @@
   (define gameover #f)
   (println word-in-progress)
   (send wiplabel set-label word-in-progress)
+  (send guesslabel set-label guesslist)
   ;; Revealing letters that are guessed
   (define (reveal key char count)
     (cond ((= count (string-length word-in-progress)) #t) 
