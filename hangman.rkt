@@ -16,7 +16,7 @@
 (define bm (make-object bitmap% (get-pure-port (string->url "https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/Deck.png"))))
 
 ;; Loads the deck image into a 'canvas'
-(define pos -55)
+(define pos -30)
 (define mycanvas%
   (class canvas%
     (super-new)
@@ -24,6 +24,7 @@
          (define/override (on-paint)
             (let ([my-dc (get-dc)])
               (send my-dc draw-bitmap bm pos pos)))))
+
 
 ;;
 ;; IMPORTANT, below is code adding parts to the frame
@@ -60,11 +61,27 @@
         ((eq? difficulty 'hard) (make-game 'hard))
         ('else (make-game 'normal (car (list-tail dictionary (random (length dictionary))))))))
 
-;; dummy definition
-(define (update-body count) count)
+;; update canvas here
+(define red-brush (new brush% [color "red"]))
+(define yellow-brush (new brush% [color "yellow"]))
+(define (update-body count)
+  (let ([my-dc (send c get-dc)])
+                        (begin (send my-dc draw-bitmap bm pos pos)
+                               (send my-dc set-brush red-brush)
+                               (if (> count 0) (begin (send my-dc draw-ellipse 315 110 80 80)
+                                                      (send my-dc set-brush yellow-brush)
+                                                      (send my-dc draw-rectangle 330 130 10 10)
+                                                      (send my-dc draw-rectangle 370 130 10 10)
+                                                      (send my-dc draw-line 345 165 365 165)))
+                               (if (> count 1) (send my-dc draw-line 350 190 350 320))
+                               (if (> count 2) (send my-dc draw-line 350 240 300 190))
+                               (if (> count 3) (send my-dc draw-line 350 240 400 190))
+                               (if (> count 4) (send my-dc draw-line 350 320 400 390))
+                               (if (> count 5) (send my-dc draw-line 350 320 300 390)))))
 
 ;; Game object, use constructor new-game
 (define (make-game difficulty wordlist)
+  (update-body 0)
   (define guesslist "")
   (define word-in-progress (make-string (string-length wordlist) #\*))
   (define wrong-count 0)
@@ -90,7 +107,7 @@
                                                      (send guesslabel set-label guesslist)) 
                                               (begin (play FAILURE)
                                                      (set! wrong-count (+ wrong-count 1))
-                                                     (when (> wrong-count 6) (set! gameover #t))
+                                                     (when (> wrong-count 5) (set! gameover #t))
                                                      (send guesslabel set-label guesslist)
                                                      (update-body wrong-count))))))))
   (define (dispatch msg)
