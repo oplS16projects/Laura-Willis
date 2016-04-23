@@ -60,6 +60,8 @@
         ((eq? difficulty 'hard) (make-game 'hard))
         ('else (make-game 'normal (car (list-tail dictionary (random (length dictionary))))))))
 
+;; dummy definition
+(define (update-body count) count)
 
 ;; Game object, use constructor new-game
 (define (make-game difficulty wordlist)
@@ -89,7 +91,8 @@
                                               (begin (play FAILURE)
                                                      (set! wrong-count (+ wrong-count 1))
                                                      (when (> wrong-count 6) (set! gameover #t))
-                                                     (send guesslabel set-label guesslist))))))))
+                                                     (send guesslabel set-label guesslist)
+                                                     (update-body wrong-count))))))))
   (define (dispatch msg)
     (cond ((eq? msg 'guess) guess)
           ('else (error "Invalid dispatch request" msg))))
