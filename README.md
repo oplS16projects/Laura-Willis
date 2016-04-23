@@ -2,11 +2,11 @@
 
 ### Playing the Game
  
- To play, simply open the hangman.rkt file with drracket and hit run! The GUI will open promptly and you can start playing. Just type a letter into the text box and hit enter to guess. To start a new game, type "normal" (sans quotation marks) into the text field. Note that only normal difficulty works.
+ To play, simply open the hangman.rkt file with DrRacket and hit run! The GUI will open promptly and you can start playing. Just type a letter into the text box and hit enter to guess. To start a new game, type "normal" (sans quotation marks) into the text field. Note that only normal difficulty works.
 	
 ### What's New!
 
-We used the frame% object along with canvas% and text-field% to create the GUI. These objects provide thier own callback functions for updates, so working with them was a piece of cake. Most of the work done was developing the GUI and then integrating it into the existing game.
+We used the frame% object along with canvas% and text-field% to create the GUI. These objects provide their own callback functions for updates, so working with them was a piece of cake. Most of the work done was developing the GUI and then integrating it into the existing game.
 
 ### Statement
 
