@@ -12,18 +12,15 @@
 ;(define LOSESOUND (rs-read (string->path "lose.wav")))
 (define SUCCESS (rs-read (string->path "success.wav")))
 (define FAILURE (rs-read (string->path "failure.wav")))
-; Make a frame by instantiating the frame% class 
 (define f (new frame% [label "Hang me, with sounds!"] [width 600] [height 600]))
 (define bm (make-object bitmap% (get-pure-port (string->url "https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/Deck.png"))))
 
+;; Loads the deck image into a 'canvas'
 (define pos -30)
-;; Derive a new canvas (a drawing window) class
 (define mycanvas%
   (class canvas%
-  ;; Call the superclass init, passing on all init args
     (super-new)
     (inherit get-dc)
-	;; Define overriding method to handle image repainted in the canvas 
          (define/override (on-paint)
             (let ([my-dc (get-dc)])
               (send my-dc draw-bitmap bm pos pos)))))
@@ -31,12 +28,12 @@
 
 ;;
 ;; IMPORTANT, below is code adding parts to the frame
-;;Make a canvas that handles events in the frame
+;;
 (define c (new mycanvas% [parent f]))
 
 (define wiplabel (new message% [parent f] [label ""] ))
 (define guesslabel (new message% [parent f] [label ""] ))
-(define infolabel (new message% [parent f] [label "Type easy, normal, or hard to begin a new game."] ))
+(define infolabel (new message% [parent f] [label "Type new to begin a new game."] ))
 
 ;; Event handler for text box
 (define (event-handler t e) (define boxinput (send t get-value))
@@ -44,6 +41,7 @@
       (begin (send t set-value "") (cond ((string-ci=? boxinput "easy") (println "starteasygame"))
                                          ((string-ci=? boxinput "normal") (set! game (new-game 'normal)))
                                          ((string-ci=? boxinput "hard") (println "starthardgame"))
+                                         ((string-ci=? boxinput "new") (set! game (new-game 'normal)))
                                          ((= 1 (string-length boxinput)) (guess boxinput))))
       #f))
 ;; Add a text field to the dialog
@@ -117,7 +115,7 @@
           ('else (error "Invalid dispatch request" msg))))
   dispatch)
 
-;; MAKES FRAME VISIBLE 
+;; MAKES FRAME VISIBLE
 (send f show #t)
 
 ;; Starts a new game on normal difficulty, makes testing faster
