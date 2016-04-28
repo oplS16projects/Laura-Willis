@@ -1,11 +1,11 @@
-# FP7-webpage Title of Project
+# Hang me, with sounds!
 This is a template for using your repo's README.md as your project web page. 
 I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
 
 ##Authors
-Person One
+willis Hand
 
-Person Two
+Laura Lucaciu
 
 ##Overview
 A brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
@@ -26,21 +26,25 @@ Identify the OPL concepts demonstrated in your project. Be brief. A simple list 
 Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
 
 ##Favorite Scheme Expressions
-####Mark (a team member)
+####Willis
 Each team member should identify a favorite expression or procedure, written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
 Remember code looks something like this:
 ```scheme
 (map (lambda (x) (foldr compose functions)) data)
 ```
-####Lillian (another team member)
-This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
+####Laura 
+This expression loads the deck image into a 'canvas'
 ```scheme
-(let* ((expr (convert-to-regexp (read-line my-in-port)))
-             (matches (flatten
-                       (hash-map *words*
-                                 (lambda (key value)
-                                   (if (regexp-match expr key) key '()))))))
-  matches)
+(define bm (make-object bitmap% (get-pure-port (string->url "https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/Deck.png"))))
+
+(define pos -30)
+(define mycanvas%
+  (class canvas%
+    (super-new)
+    (inherit get-dc)
+         (define/override (on-paint)
+            (let ([my-dc (get-dc)])
+              (send my-dc draw-bitmap bm pos pos)))))
 ```
 
 ##Additional Remarks
