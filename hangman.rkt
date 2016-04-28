@@ -47,12 +47,11 @@
 (define txt (new text-field% [parent f] [label "Please enter a letter:"] [callback event-handler]))
 
 
-;; Loads list of words in from file, will eventually excludes words outside of length limits
+;; Loads list of words in from file, excludes words outside of length limits
 (define (lengthcheck str)
   (if (or (< (string-length str) MINWORDLENGTH) (> (string-length str) MAXWORDLENGTH))
       #f
       #t))
-;;(define dictionary (filter lengthcheck (map symbol->string (file->list (string->path "dictionary.txt")))))
 (define dictionary (filter lengthcheck (map symbol->string (file->list (string->path "dictionary.txt")))))
 
 ;; Basically a constructor for game, takes one arg: difficulty
