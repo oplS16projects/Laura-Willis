@@ -1,54 +1,52 @@
-# Project Title:  Hang me, with sounds!
+# FP7-webpage Title of Project
+This is a template for using your repo's README.md as your project web page. 
+I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
 
-### Playing the Game
- 
- To play, simply open the hangman.rkt file with DrRacket and hit run! The GUI will open promptly and you can start playing. Just type a letter into the text box and hit enter to guess. To start a new game, type "normal" (sans quotation marks) into the text field. Note that only normal difficulty works.
-	
-### What's New!
+##Authors
+Person One
 
-We used the frame% object along with canvas% and text-field% to create the GUI. These objects provide their own callback functions for updates, so working with them was a piece of cake. Most of the work done was developing the GUI and then integrating it into the existing game.
+Person Two
 
-### Statement
+##Overview
+A brief description of the project is given here.  The description is 1 to 3 sentences long.  Be concise and clear.
 
-  Hangman is a popular word game in which one player (the "chooser") chooses a secret word and another player (the "guesser") attempts to guess the word one letter at a time. If a guessed letter appears in the word, all instances of it are revealed. If not, the guesser loses a chance. If the guesser figures out the secret word before he or she runs out of chances, he or she wins. If not, the player who chose the word wins. 
+##Screenshot
+(insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
 
-### Analysis
-  What is this game special than the others? First that would be that this game provides difficulties levels and sound.
-  The basic mechanism of the game for this project is that the computer will randomly select a word from a text file ("dictionary.txt"). The list of words is provided by this file which are used by the computer to randomly pick. The user is able to chose the level difficulty to play. These levels are: easy, normal and hard.
-  The user will then try to guess what the word is. As the user makes correct, or incorrect guesses, the hangman or word will be updated. This will be handled by the constructor "new-game" from game object.
-  The hangman's body parts are drawn by a function draw-body-part which draws the pieces of a hangman figure using canvas. The figure is drawn one body part at a time. The function consumes one of the seven symbols 'deck, 'head, 'body, 'right-leg, 'letf-leg, 'right-arm, 'left-arm. This six pieces of the hangman are: head, body, left arm, right arm, left leg, right leg. It always returns true and draws the matching part of the figure.
-  The "guess" function will then check the guess, update the game state accordingly, and request the canvas redraw with the new state.
-  If the player makes 6 wrong guesses, the entire figure has been drawn and game is over.
-  There will be four sounds played using rsound audio streams. These .wav files will be played for correct guesses, wrong guesses, winning, and losing.
-  
-### Data set or other source materials
-  External libraries that we are going to use are: htdp/draw, lang/plt-pretty-big-text, racket/text-field box, racket/gui/bas, and rsound. Additionally an external .txt file containing words from the english languague will be utilized.
+Here's a demonstration of how to display an image that's uploaded to this repo:
+![screenshot showing env diagram](withdraw.png)
 
-### Deliverable and Demonstration
+##Concepts Demonstrated
+Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
+* **Data abstraction** is used to provide access to the elements of the RSS feed.
+* The objects in the OpenGL world are represented with **recursive data structures.**
+* **Symbolic language processing techniques** are used in the parser.
 
-  At the conclusion of the course we will have a fully functional game that can be played and enjoyed by all! We hope to have all features implemented by the time of the live demonstration. 
+##External Technology and Libraries
+Briefly describe the existing technology you utilized, and how you used it. Provide a link to that technology(ies).
 
-## Architecture Diagram
-![alt tag](https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/flowchart.png)
+##Favorite Scheme Expressions
+####Mark (a team member)
+Each team member should identify a favorite expression or procedure, written by them, and explain what it does. Why is it your favorite? What OPL philosophy does it embody?
+Remember code looks something like this:
+```scheme
+(map (lambda (x) (foldr compose functions)) data)
+```
+####Lillian (another team member)
+This expression reads in a regular expression and elegantly matches it against a pre-existing hashmap....
+```scheme
+(let* ((expr (convert-to-regexp (read-line my-in-port)))
+             (matches (flatten
+                       (hash-map *words*
+                                 (lambda (key value)
+                                   (if (regexp-match expr key) key '()))))))
+  matches)
+```
 
-## Schedule
+##Additional Remarks
+Anything else you want to say in your report. Can rename or remove this section.
 
-### First Milestone (Fri Apr 15)
-The first milestone will include the basic implementation of the game. It is key to have a fully functional base platform to build the extra functionality onto.
+#How to Download and Run
+You may want to link to your latest release for easy downloading by people (such as Mark).
 
-### Second Milestone (Fri Apr 22)
-The second milestone will be the implementation of sound, non-traditional difficulties, and the GUI. These are the features that really differentiate our hangman from other implementations.
-
-### Final Presentation (last week of semester)
-The final presentation, being the make or break deadline for causing a positive impression, will be the time by which we plan to have all of the bugs and touch-ups tackled. 
-
-## Group Responsibilities
-
-Willis is the leader of Team Happy Feet.
-
-### Willis Hand (whand662)
-In addition to handling code integration, I will be responsible for the back-end code that makes up the game itself. Although hangman implementations already exist, by making the game from the ground up I will be able to implement our special features more easily.
-
-
-### Laura Lucaciu (lauralucaciu)
-  Will work on graphics part, drawing the hangman, gui part.
+Include what file to run, what to do with that file, how to interact with the app when its running, etc. 
