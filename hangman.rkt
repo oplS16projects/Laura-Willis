@@ -12,15 +12,18 @@
 ;(define LOSESOUND (rs-read (string->path "lose.wav")))
 (define SUCCESS (rs-read (string->path "success.wav")))
 (define FAILURE (rs-read (string->path "failure.wav")))
+; Make a frame by instantiating the frame% class 
 (define f (new frame% [label "Hang me, with sounds!"] [width 600] [height 600]))
 (define bm (make-object bitmap% (get-pure-port (string->url "https://raw.githubusercontent.com/oplS16projects/Laura-Willis/master/Deck.png"))))
 
-;; Loads the deck image into a 'canvas'
 (define pos -30)
+;; Derive a new canvas (a drawing window) class
 (define mycanvas%
   (class canvas%
+  ;; Call the superclass init, passing on all init args
     (super-new)
     (inherit get-dc)
+	;; Define overriding method to handle image repainted in the canvas 
          (define/override (on-paint)
             (let ([my-dc (get-dc)])
               (send my-dc draw-bitmap bm pos pos)))))
@@ -28,7 +31,7 @@
 
 ;;
 ;; IMPORTANT, below is code adding parts to the frame
-;;
+;;Make a canvas that handles events in the frame
 (define c (new mycanvas% [parent f]))
 
 (define wiplabel (new message% [parent f] [label ""] ))
@@ -114,7 +117,7 @@
           ('else (error "Invalid dispatch request" msg))))
   dispatch)
 
-;; MAKES FRAME VISIBLE
+;; MAKES FRAME VISIBLE 
 (send f show #t)
 
 ;; Starts a new game on normal difficulty, makes testing faster
