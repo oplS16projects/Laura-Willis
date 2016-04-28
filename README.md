@@ -3,7 +3,7 @@ This is a template for using your repo's README.md as your project web page.
 I recommend you copy and paste into your README file. Delete this line and the one above it, customize everything else. Make it look good!
 
 ##Authors
-willis Hand
+Willis Hand
 
 Laura Lucaciu
 
