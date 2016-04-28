@@ -6,8 +6,7 @@ Willis Hand
 Laura Lucaciu
 
 ##Overview
-This is a Hangman game with difficulties and sounds. The user is able to chose the level difficulty to play. 
-The sounds will be played for correct guesses, wrong guesses, winning, and losing.
+This is our own implementation of the game Hangman. The game is played by guessing letters in an attempt to reveal a word that has been randomly selected. We added some sound effects and a GUI, making the game more engaging. Feel free to swap out our dictionary.txt with your own text file of words!
 
 ##Screenshot
 
