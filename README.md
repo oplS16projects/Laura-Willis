@@ -10,16 +10,13 @@ This is a Hangman game with difficulties and sounds. The user is able to chose t
 The sounds will be played for correct guesses, wrong guesses, winning, and losing.
 
 ##Screenshot
-(insert a screenshot here. You may opt to get rid of the title for it. You need at least one screenshot. Make it actually appear here, don't just add a link.)
 
-Here's a demonstration of how to display an image that's uploaded to this repo:
-![screenshot showing env diagram](withdraw.png)
+![alt-text](screenshot.png)
 
 ##Concepts Demonstrated
-Identify the OPL concepts demonstrated in your project. Be brief. A simple list and example is sufficient. 
-* **Data abstraction** is used to provide access to the elements of the RSS feed.
-* The objects in the OpenGL world are represented with **recursive data structures.**
-* **Symbolic language processing techniques** are used in the parser.
+* **Closures** are used in making the game object to create encapsulation for the word to be guessed. This prevents the user from cheating through the REPL.
+* **High order procedures** are used in the filtering and parsing of the dictionary file. Filter is used to remove words outside of the hardcoded length limits and map is used to change the way that the words are interpreted from symbol to string.
+* **Dispatch tables** are used in both the game object and in the callback function of the text box. This allows for one function to handle a variety of input.
 
 ##External Technology and Libraries
 
@@ -30,9 +27,13 @@ The sounds played using rsound audio streams https://docs.racket-lang.org/rsound
 
 ##Favorite Scheme Expressions
 ####Willis
-Add your favorite here....
+This is how I update the so called "word-in-progress" that is displayed to the player. It was a situation where using an iterative process to make a sort of for loop worked really well.
 ```scheme
-(map (lambda (x) (foldr compose functions)) data)
+(define word-in-progress (make-string (string-length wordlist) #\*))
+(define (reveal key char count)
+    (cond ((= count (string-length word-in-progress)) #t) 
+      ((equal? (string-ref key count) char) (begin (string-set! word-in-progress count char) (reveal key char (+ 1 count))))
+      ('else (reveal key char (+ 1 count)))))
 ```
 ####Laura 
 This expression is loading the deck image into a 'canvas' by using the bitmap% object generating the contents of a url struct.
@@ -56,10 +57,5 @@ This expression is loading the deck image into a 'canvas' by using the bitmap% o
 
 ```
 
-##Additional Remarks
-Anything else you want to say in your report. Can rename or remove this section.
-
 #How to Download and Run
-You may want to link to your latest release for easy downloading by people (such as Mark).
-
-Include what file to run, what to do with that file, how to interact with the app when its running, etc. 
+To run, simply download the latest release and run the hangman.rkt file. To guess a letter, type the letter into the text box at the bottom of the window and press the enter key. Thats it!
