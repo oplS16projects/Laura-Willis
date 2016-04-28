@@ -58,3 +58,5 @@ This expression is loading the deck image into a 'canvas' by using the bitmap% o
 
 #How to Download and Run
 To run, simply download the latest release and run the hangman.rkt file. To guess a letter, type the letter into the text box at the bottom of the window and press the enter key. Thats it!
+
+Latest Release: https://github.com/oplS16projects/Laura-Willis/releases/tag/V1.0
